@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar/Navbar';
 import { Footer } from '@components/Footer';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://menumize.com'),
   title: 'Menumize | Digital QR menus for modern restaurants',
   description:
     'Menumize helps restaurants create beautiful, fast, QR-based digital menus with powerful branding, analytics, and multi-language support.',

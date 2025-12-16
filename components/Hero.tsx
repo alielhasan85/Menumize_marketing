@@ -12,11 +12,16 @@ export const Hero = () => {
     squares: [
       [-1, 2],
       [1, 3],
-      // Random values between -10 and 10
-      ...Array.from({ length: 10 }, () => [
-        Math.floor(Math.random() * 20) - 10,
-        Math.floor(Math.random() * 20) - 10,
-      ]),
+      [-4, 5],
+      [2, -2],
+      [0, 0],
+      [3, -4],
+      [-3, 1],
+      [4, 4],
+      [-2, -3],
+      [5, -1],
+      [-5, 2],
+      [2, 5],
     ],
   };
 
