@@ -1,0 +1,134 @@
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npx turbo run dev --filter=@menumize/platform --filter=@menumize/guest 
+
+
+npx prisma migrate dev --create-only -n ai_and_metering 
+
+Remove-Item -Recurse -Force .next
+npm run build
+''
+Guest app
+apps/guest/app
+├─ layout.tsx                      ← global <html>, fonts, CSScd 
+├─ [locale]/
+│  ├─ layout.tsx                   ← i18n provider + dir="rtl|ltr"
+│  ├─ page.tsx                     ← dev shortcut or 404 redirect
+│  └─ [venueHandle]/
+│     ├─ layout.tsx                ← (empty pass-through)
+│     ├─ page.tsx                  ← redirects to venue’s default context
+│     └─ [context]/
+│        ├─ layout.tsx             ← VenueProvider + metadata
+│        └─ page.tsx               ← real UI (menu, cart, etc.)
+
+
+npx prisma format      # Format and validate schema
+npx prisma generate    # Generate Prisma Client
+
+
+
+idea	difficulty
+* Blur-up low-res placeholder while original loads	easy (use thumbnail)
+* Pre-defined texture gallery (“Paper”, “Wood”, “Dark slate”)	easy
+* Video loop hero (MP4 / WebM)	medium
+* Separate mobile hero (rare request)	only if customers ask
+
+
+
+https://www.flaticon.com/free-icon/branding_2258249?term=branding&page=1&position=3&origin=search&related_id=2258249 
+link for bradnig icon
+
+* using Redis  in guest app seems will improve performance + upstash
+* Tawk.to for chat integration
+
+
+# 1. Discard ALL local changes and resets everything
+git reset --hard HEAD
+
+# 2. Remove any untracked files and directories
+git clean -fd
+
+# 3. Fetch latest from GitHub
+git fetch origin
+
+# 4. Reset your local branch to match the remote branch (e.g., main)
+git reset --hard origin/main
+
+
+
+# remove Next build output
+Remove-Item -Recurse -Force .next
+
+
+guest "
+
+
+
+
+
+NEXT_PUBLIC_DEV_GUEST_HANDLE=bait-el-shami-3G436D
+NEXT_PUBLIC_DEV_GUEST_CONTEXT=dine-in
+NEXT_PUBLIC_DEV_TABLE_TOKEN=343763e3e24b4ff1801105
+
+
+
+
+
+
+"" admin
+
+GUEST_REVALIDATE_URL = https://guest.menumize.com/api/revalidate
+REVALIDATE_TOKEN = 80DCXo8TBr3Cd8aiPIOpLmaBbamiTXg
+ENABLE_GUEST_REVALIDATE = false
+ 
+
+
+
+adding sql block after migration -- 
+npx prisma format
+npx prisma generate
+npx prisma migrate dev --create-only --name add_open_session_guard 
+npx prisma migrate dev
+
+
+easier way to migrate 
+
+npx prisma format
+npx prisma migrate dev --name adding_analytics
+
+# CORS_ALLOW_ORIGIN=https://guest.menumize.com
+NEXT_PUBLIC_GUEST_ORIGIN=http://localhost:3001
+
+guest 
+NEXT_PUBLIC_DEV_HANDLE=bait-el-shami-3G436D
+NEXT_PUBLIC_DEV_CONTEXT=dine-in
+NEXT_PUBLIC_DEV_TABLE_TOKEN=343763e3e24b4ff1801105
+# optional, if you want to land on a specific menu
+NEXT_PUBLIC_DEV_MENU_ID=cmgpjlqbo0003wgkg4amlie4w
+
+NEXT_PUBLIC_PLATFORM_ORIGIN=http://localhost:3000
+
+
+# 1) Make sure you're on dev
+git checkout dev   # or: git switch dev
+
+# 2) Update your local branches from GitHub
+git fetch origin
+
+# 3) Fast-forward dev to the latest main
+git merge origin/main
+# (this should be a fast-forward, no conflicts, no new commit)
+
+# 4) Push updated dev back to GitHub
+git push origin dev
+
+
+
+CRON_SECRET="menumize-cron-2025-Hs7#29fa!"
+
+
+Run the following to update                            │
+│    npm i --save-dev prisma@latest   
+npm i @prisma/client@latest 
+
+
+NEXT_PUBLIC_MENUMIZE_PHASE=v1
