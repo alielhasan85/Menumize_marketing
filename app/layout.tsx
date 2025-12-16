@@ -1,33 +1,32 @@
-import "../styles/globals.css";
-import { Metadata } from "next";
-import { Banner } from "@components/Banner";
-import Navbar from "@components/Navbar/Navbar";
-import { Footer } from "@components/Footer";
+import '../styles/globals.css';
+import type { Metadata } from 'next';
+import Navbar from '@components/Navbar/Navbar';
+import { Footer } from '@components/Footer';
 
 export const metadata: Metadata = {
-  title: "Foxtrot | SaaS Marketing Template",
+  title: 'Menumize | Digital QR menus for modern restaurants',
   description:
-    "Foxtrot is a SaaS marketing template developed at Aceternity. It is built with Next.js, Tailwind CSS, and Framer Motion.",
+    'Menumize helps restaurants create beautiful, fast, QR-based digital menus with powerful branding, analytics, and multi-language support.',
   openGraph: {
-    type: "website",
-    siteName: "foxtrotaceternity",
+    type: 'website',
+    siteName: 'Menumize',
+    title: 'Menumize | Digital QR menus for modern restaurants',
+    description:
+      'Create and manage stunning digital menus, track guest behavior, and update items in real time across all your venues.',
     images: [
       {
-        url: "https://foxtrot.aceternity.com/banner.png",
+        // TODO: replace with your own OG banner once ready
+        url: '/og-banner.png',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    site: "@foxtrotaceternity",
+    card: 'summary_large_image',
+    site: '@menumize', // placeholder, you can change later
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>

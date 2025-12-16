@@ -1,44 +1,45 @@
-import { AiFillPieChart, AiOutlineTeam } from "react-icons/ai";
-import { BsBarChartFill, BsServer } from "react-icons/bs";
-import { GrOrganization } from "react-icons/gr";
-import { GiLockSpy } from "react-icons/gi";
-import { MdDarkMode } from "react-icons/md";
+import { AiFillPieChart, AiOutlineTeam } from 'react-icons/ai';
+import { BsBarChartFill, BsServer } from 'react-icons/bs';
+import { GrOrganization } from 'react-icons/gr';
+import { GiLockSpy } from 'react-icons/gi';
+import { MdDarkMode } from 'react-icons/md';
 
+// constants/features.ts
 export const features = [
   {
-    heading: "Amazing Analytics you will never ever use.",
+    heading: 'Branded QR menus',
     description:
-      "Just like any other analytics tool, you will never use all the features. But we have them all just in case you needed some of them.",
+      'Customize logo, colors, and layout so your digital menu feels like an extension of your brand, not a generic template.',
     icon: <AiFillPieChart className="text-primary h-4 w-4 relative z-50" />,
   },
   {
-    heading: "Charts, graphs and everything at your fingertips",
+    heading: 'Multiple menus & sections',
     description:
-      "Bar graphs, Pie Charts, Line graphs, Area graphs, you name it. We have it. And if we don't, we will add it.",
+      'Create breakfast, lunch, seasonal or special event menus with flexible sections and item organization.',
     icon: <BsBarChartFill className="text-primary h-4 w-4 relative z-50" />,
   },
   {
-    heading: "Create teams. Invite your friends and families.",
+    heading: 'Real-time updates',
     description:
-      "Creation of teams is a breeze. Invite your friends to Foxtrot Analytics so that they can bang their head against a pie chart.",
+      'Change prices, hide sold-out items, or add new dishes and see them update instantly for every guest.',
     icon: <AiOutlineTeam className="text-primary h-4 w-4 relative z-50" />,
   },
   {
-    heading: "Self host your analytics. Own your mistakes",
+    heading: 'Multi-language ready',
     description:
-      "With Foxtrot Analytics, you can self host incase you don't wish to pay us or see us grow to a billion dollar company.",
+      'Store translations per item and show guests the right language based on how they access your menu.',
     icon: <BsServer className="text-primary h-4 w-4 relative z-50" />,
   },
   {
-    heading: "We don't track you. We don't sell your data.",
+    heading: 'Guest insights & analytics',
     description:
-      "Lol. We don't even have a database. We are just a bunch of guys who are trying to make a living. wink wink.",
+      'See which items are viewed the most, which sections guests spend time on, and how your menu performs over time.',
     icon: <GiLockSpy className="text-primary h-4 w-4 relative z-50" />,
   },
   {
-    heading: "Lastly, we have support for dark mode. Yay!",
+    heading: 'Video-first menus (coming soon)',
     description:
-      "Dark mode is as necessary to a developer as a cup of coffee. We have both. We won't give you coffee though.",
+      'Show dishes as short, vertical videos for a richer experience and higher engagement, coming in a future release.',
     icon: <MdDarkMode className="text-primary h-4 w-4 relative z-50" />,
   },
 ];

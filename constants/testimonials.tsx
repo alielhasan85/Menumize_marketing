@@ -1,44 +1,46 @@
+// constants/testimonials.ts
+
 export const testimonials = [
   {
-    name: "Manu Arora",
-    designation: "Senior Meme Officer",
+    name: "Sara Haddad",
+    designation: "Owner, Cedar Grill",
     content:
-      "This is my application so i'll only say good things about it. It's the piece of crap. Although it took me so much time and energy to build. I'm proud of it.",
-    avatar: "/images/testimonials/manu.png",
-  },
-
-  {
-    name: "Alfred J. Pennyworth",
-    designation: "MD at Wayne Enterprises",
-    content:
-      "Backed by Wayne enterprises, Foxtrot is the best platform any business can ever imagine. Worth every penny.",
-    avatar: "/images/testimonials/2.png",
-  },
-  {
-    name: "Elon Must",
-    designation: "Twiteeer CEO, Developer, Writer, Memer, etc.",
-    content:
-      "What did you get done this week? stop with this application and start fixing the search damnit.",
-    avatar: "/images/testimonials/3.png",
-  },
-  {
-    name: "Lord Voldemort",
-    designation: "Head boy at Slytherin House",
-    content:
-      "Harry Potter, the boy who bought Foxtrot Analytics. He is stronger than me now. Highly recommended.",
-    avatar: "/images/testimonials/4.png",
-  },
-  {
-    name: "Tyler Durden",
-    designation: "Project Mayhem Coordinator",
-    content:
-      "Tried to incorporate in project mayhem but it didn't work. I don't know why. I'm not a developer. I'm a salesman. I sell soap. Also this platform is hella expensive.",
+      "Before Menumize, changing prices or adding new items meant reprinting all our menus. Now we update everything in minutes and guests see it instantly on their phones.",
     avatar: "/images/testimonials/1.png",
   },
   {
-    name: "Groot",
-    designation: "Groot at Groot Industries",
-    content: "I am groot. I am groot, I am groot, I am groot. I AM GROOOOOT!",
+    name: "Mohammed Al-Khalifa",
+    designation: "General Manager, The Terrace Café",
+    content:
+      "We run breakfast, lunch, and shisha menus with different prices on weekdays and weekends. Menumize keeps it all organized and our staff doesn’t worry about old paper menus anymore.",
+    avatar: "/images/testimonials/2.png",
+  },
+  {
+    name: "Lina Osman",
+    designation: "Marketing Manager, Vista Rooftop",
+    content:
+      "Branding was very important for us. Being able to match our colors, fonts, and layout made the digital menu feel like part of our identity, not just a generic QR code.",
+    avatar: "/images/testimonials/3.png",
+  },
+  {
+    name: "Ahmed Salman",
+    designation: "Operations Lead, Urban Bites",
+    content:
+      "The analytics helped us discover which items people were viewing the most but not ordering. We adjusted photos and descriptions and saw an immediate lift in sales.",
+    avatar: "/images/testimonials/4.png",
+  },
+  {
+    name: "Julia Costa",
+    designation: "Owner, Little Napoli",
+    content:
+      "We have many tourists, so multi-language menus were always a problem. With Menumize we manage all translations in one place and guests choose their own language.",
     avatar: "/images/testimonials/5.png",
+  },
+  {
+    name: "Ali Rahman",
+    designation: "Franchise Partner, Burger Yard",
+    content:
+      "Rolling out new items across branches used to be a headache. Now we push menu updates from one dashboard and every branch QR shows the latest version.",
+    avatar: "/images/testimonials/6.png",
   },
 ];

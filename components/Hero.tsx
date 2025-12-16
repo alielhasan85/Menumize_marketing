@@ -1,10 +1,10 @@
-"use client";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import { BlurImage } from "./BlurImage";
-import Button from "./Button";
-import { GridPattern } from "./GridPattern";
-import { motion, useScroll } from "framer-motion";
+'use client';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { BlurImage } from './BlurImage';
+import Button from './Button';
+import { GridPattern } from './GridPattern';
+import { motion, useScroll } from 'framer-motion';
 
 export const Hero = () => {
   const pattern = {
@@ -22,6 +22,7 @@ export const Hero = () => {
 
   const [isHalf, setIsHalf] = useState(false);
   const { scrollY } = useScroll();
+
   useEffect(() => {
     const handleScroll = () => {
       if (scrollY.get() > (window.innerHeight * 2) / 10) {
@@ -34,10 +35,11 @@ export const Hero = () => {
     return () => {
       scrollY.clearListeners();
     };
-  }, []);
+  }, [scrollY]);
 
   return (
-    <div className=" px-4">
+    // 👇 main hero section (you can anchor to this later if needed)
+    <section id="hero" className="px-4">
       <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
         <GridPattern
           width={120}
@@ -47,32 +49,34 @@ export const Hero = () => {
           {...pattern}
         />
       </div>
+
       <div className="relative z-10 max-w-7xl mx-auto mt-32">
+        {/* 🧾 Main Menumize headline */}
         <h1 className="font-semibold text-4xl sm:text-7xl text-center max-w-5xl mx-auto text-zinc-800 leading-tight tracking-tight">
-          Revolutionize your business with our{" "}
-          <span className="text-primary">powerful SaaS</span> tool
+          Beautiful <span className="text-primary">digital QR menus</span> for modern restaurants
         </h1>
+
+        {/* 📝 Subtext – simple, can refine later */}
         <p className="mx-auto mt-6 max-w-3xl text-xl tracking-tight text-zinc-600 text-center leading-normal">
-          Foxtrot is a simple and powerful SaaS tool that helps you to track
-          your business analytics and improve your numbers. Just kidding, it's
-          just a template.
+          Menumize helps you create fast, branded QR menus, update items in seconds, and understand
+          what your guests love – all from one simple web app.
         </p>
 
+        {/* 🎯 Primary CTAs – links are placeholders for now */}
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center items-center mt-12">
-          <Button
-            as="button"
-            variant="outline"
-            className="rounded-2xl py-2 border border-zinc-200"
-          >
-            <Link href="/signup">Documentation</Link>
+          <Button as="button" variant="outline" className="rounded-2xl py-2 border border-zinc-200">
+            {/* TODO: later point this to guest demo, e.g. https://menu.menumize.com/demo */}
+            <Link href="/demo">View demo menu</Link>
           </Button>
           <Button as="button" variant="large" className="rounded-2xl py-2">
-            <Link href="/signup">Try it for free</Link>
+            {/* TODO: later point this to platform signup, e.g. https://app.menumize.com/signup */}
+            <Link href="/signup">Start free trial</Link>
           </Button>
         </div>
 
+        {/* 📸 Screenshot area – replace image later with Menumize UI */}
         <div
-          style={{ perspective: "1000px" }}
+          style={{ perspective: '1000px' }}
           className="overflow-hidden pt-20 px-4 w-full relative"
         >
           <motion.div
@@ -80,7 +84,7 @@ export const Hero = () => {
               rotateX: isHalf ? 0 : 45,
               scale: isHalf ? [0.8, 1.05, 1] : 0.8,
               transition: {
-                type: "spring",
+                type: 'spring',
                 stiffness: 100,
                 damping: 20,
                 mass: 0.5,
@@ -89,13 +93,13 @@ export const Hero = () => {
             className="relative w-[100%] overflow-x-hidden md:w-3/4 mx-auto h-[12rem] sm:h-[16rem] md:h-[24rem] lg:h-[32rem] -mb-12 md:-mb-32 max-w-5xl"
           >
             <BlurImage
-              src={"/images/landing.png"}
+              src={'/images/landing.png'} // TODO: swap with Menumize dashboard/menu screenshot
               layout="fill"
-              className=" rounded-xl md:rounded-3xl border mx-auto object-cover shadow-sm  object-right-top  "
+              className=" rounded-xl md:rounded-3xl border mx-auto object-cover shadow-sm  object-right-top"
             />
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
