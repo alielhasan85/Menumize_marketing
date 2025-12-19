@@ -1,7 +1,9 @@
-import '../styles/globals.css';
-import type { Metadata } from 'next';
+import '../../styles/globals.css';
+import type {Metadata} from 'next';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages, getLocale} from 'next-intl/server';
 import Navbar from '@components/Navbar/Navbar';
-import { Footer } from '@components/Footer';
+import {Footer} from '@components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://menumize.com'),
@@ -14,26 +16,30 @@ export const metadata: Metadata = {
     title: 'Menumize | Digital QR menus for modern restaurants',
     description:
       'Create and manage stunning digital menus, track guest behavior, and update items in real time across all your venues.',
-    images: [
-      {
-        // TODO: replace with your own OG banner once ready
-        url: '/og-banner.png',
-      },
-    ],
+    images: [{url: '/og-banner.png'}]
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@menumize', // placeholder, you can change later
-  },
+    site: '@menumize'
+  }
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children
+}: {
+  children: React.ReactNode;
+}) {
+  const locale = await getLocale();      // comes from i18n/request.ts config
+  const messages = await getMessages();  // already merged (common, navbar, hero, ...)
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <NextIntlClientProvider messages={messages}>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

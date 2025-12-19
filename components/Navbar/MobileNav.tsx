@@ -1,22 +1,29 @@
 // components/Navbar/MobileNav.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
-import { IoIosCloseCircleOutline, IoIosMenu } from 'react-icons/io';
+import {AnimatePresence, motion} from 'framer-motion';
+import {IoIosCloseCircleOutline, IoIosMenu} from 'react-icons/io';
+import {useLocale, useTranslations} from 'next-intl';
 
 import Logo from '@components/Logo';
-import { CustomLink } from '@components/CustomLink';
-import type { NavItem } from './Navbar';
+import {CustomLink} from '@components/CustomLink';
+import type {NavItem} from './Navbar';
+import {buildPlatformAuthUrl} from 'constants/platform'; // adjust path
 
 type MobileNavProps = {
   navItems: NavItem[];
   elevated: boolean;
 };
 
-export const MobileNav = ({ navItems, elevated }: MobileNavProps) => {
+export const MobileNav = ({navItems, elevated}: MobileNavProps) => {
   const [open, setOpen] = useState(false);
+
+  const locale = useLocale();
+  const t = useTranslations('navbar');
+  const loginHref = buildPlatformAuthUrl(locale, 'login');
+  const signupHref = buildPlatformAuthUrl(locale, 'signup');
 
   return (
     <div className="relative w-full">
@@ -27,7 +34,7 @@ export const MobileNav = ({ navItems, elevated }: MobileNavProps) => {
           boxShadow:
             elevated || open
               ? '0 16px 40px -22px rgba(15,23,42,0.45)'
-              : '0 10px 28px -20px rgba(15,23,42,0.25)',
+              : '0 10px 28px -20px rgba(15,23,42,0.25)'
         }}
         className="flex items-center justify-between rounded-full px-4 py-3"
       >
@@ -35,8 +42,8 @@ export const MobileNav = ({ navItems, elevated }: MobileNavProps) => {
 
         <motion.button
           type="button"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.92 }}
+          whileHover={{scale: 1.05}}
+          whileTap={{scale: 0.92}}
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle navigation"
         >
@@ -48,14 +55,14 @@ export const MobileNav = ({ navItems, elevated }: MobileNavProps) => {
         </motion.button>
       </motion.div>
 
-      {/* dropdown – separate card under the pill, not inside it */}
+      {/* dropdown */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -4, scale: 0.98 }}
-            animate={{ opacity: 1, y: 8, scale: 1 }}
-            exit={{ opacity: 0, y: -4, scale: 0.98 }}
-            transition={{ duration: 0.18, ease: 'easeOut' }}
+            initial={{opacity: 0, y: -4, scale: 0.98}}
+            animate={{opacity: 1, y: 8, scale: 1}}
+            exit={{opacity: 0, y: -4, scale: 0.98}}
+            transition={{duration: 0.18, ease: 'easeOut'}}
             className="absolute left-0 right-0 mt-1 rounded-3xl bg-white shadow-[0_20px_45px_rgba(15,23,42,0.25)] border border-[var(--border)] overflow-hidden"
           >
             <nav className="flex flex-col gap-3 px-4 py-4">
@@ -72,22 +79,19 @@ export const MobileNav = ({ navItems, elevated }: MobileNavProps) => {
 
               <div className="mt-1 flex flex-col gap-2 pt-2 border-t border-[var(--border)]">
                 <Link
-                  href="/login"
+                  href={loginHref}
                   onClick={() => setOpen(false)}
                   className="text-sm font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
                 >
-                  Log in
+                  {t('logIn')}
                 </Link>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    window.location.href = '/signup';
-                  }}
+                <Link
+                  href={signupHref}
+                  onClick={() => setOpen(false)}
                   className="inline-flex items-center justify-center rounded-xl bg-[var(--primary)] px-4 py-2 text-sm font-medium text-[var(--primary-foreground)] shadow-[0_10px_26px_rgba(15,23,42,0.28)] hover:bg-[#243744]"
                 >
-                  Sign Up
-                </button>
+                  {t('signUp')}
+                </Link>
               </div>
             </nav>
           </motion.div>
